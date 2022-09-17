@@ -6,15 +6,13 @@ var logger = require('morgan');
 var cors = require('cors');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var searchRouter = require('./routes/search');
 var testAPIRouter = require('./routes/testAPI');
 
 var app = express();
 
 // Set up mongoose connection
 const mongoose = require('mongoose');
-const mongoDB = "mongodb+srv://<USERNAME>:<PASSWORD>@oh-snap.99pknxd.mongodb.net/?retryWrites=true&w=majority";
+const mongoDB = "mongodb+srv://ohsnaptester01:OhSnap0220@oh-snap.99pknxd.mongodb.net/?retryWrites=true&w=majority";
 mongoose.connect(mongoDB, { 
   useNewUrlParser: true, 
   useUnifiedTopology: true
@@ -35,8 +33,6 @@ app.use(cors());
 
 // Routes
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/search', searchRouter);
 app.use('/testAPI', testAPIRouter);
 
 // catch 404 and forward to error handler
