@@ -2,6 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+
+// TODO: Put routes here
 function App() {
   const [data, setData] = React.useState(null);
 
