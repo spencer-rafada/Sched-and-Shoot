@@ -1,26 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import {useState} from 'react';
+import './styles/App.css';
+import CardList from './components/CardList';
+import SearchBar from './components/SearchBar';
 
 
 // TODO: Put routes here
 function App() {
-  const [data, setData] = React.useState(null);
+  // TODO: Functionality here
+  // const [state, setState] = useState({
+  //   result = []
+  // });
 
-  React.useEffect(() => {
-    fetch("http://localhost:9000/testAPI")
-    .then((res) => res.json())
-    .then((data) => setData(data.message));
-  }, []);
+  // const onSearch = async(text) => {
+  //   const result = await // get API
+  // }
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          {!data ? "Uhm..." : data}
-        </p>
-      </header>
+      <div className="container searchApp">
+        <h2 className="title is-2 has-text-centered">
+          Snap & Shoot! 
+        </h2>
+        <h3 className="subtitle is-3 has-text-centered">
+          Book your next photographer!
+        </h3>
+        <SearchBar />
+        <CardList />
+      </div>
     </div>
   );
 }
