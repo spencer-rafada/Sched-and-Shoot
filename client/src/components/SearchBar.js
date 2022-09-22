@@ -1,30 +1,26 @@
-import React from 'react'
-import { useState } from 'react';
-import '../styles/SearchBar.css'
+import React, { useEffect } from 'react'
 
 function SearchBar(props) {
-    const { onSearch } = props;
-    const [searchText, setSearchText] = useState('');
-    const handleInput = (e) => {
-        const text = e.target.value
-        setSearchText(text)
-    }
 
-    const handleEnterKeyPressed = (e) => {
-        if (e.key === 'Enter') {
-            onSearch(searchText)
-        }
-    }
-    return (
-    <div>
+  const handleInput = (e) => {
+    props.setInputText(e.target.value);
+  }
 
-        <div className = "searchBox">
-            <input className="input" onChange={handleInput} onKeyPress={handleEnterKeyPressed}
-            type="text" value={searchText} placeholder = ""/>
-            <i class='fa fa-camera-retro'></i>
-        </div>
-    </div>
-    )
+  useEffect(()=>{})
+
+  return (
+    <form onSubmit={()=>alert(props.inputText)}>
+      <input
+        type="text"
+        placeholder='Enter location...'
+        onChange={handleInput}
+      />
+      <input
+        type="submit"
+        value="Submit" 
+      />
+    </form>
+  )
 }
 
 export default SearchBar;
