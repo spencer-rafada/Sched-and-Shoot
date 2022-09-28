@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 // Connect to database
-const URL = 'mongodb+srv://snaptester02:ohsnap0220@oh-snap.99pknxd.mongodb.net/?retryWrites=true&w=majority';
+const URL = '<insert link here>';
 const PORT = process.env.PORT || 5000;
 
 mongoose.connect(URL)
