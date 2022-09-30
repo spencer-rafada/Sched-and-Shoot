@@ -1,10 +1,11 @@
 import React from 'react'
 import Photographers from '../components/Photographers';
 
-function Search() {
+function Search(props) {
     return (
         <div>
-            <Photographers />
+            <Photographers list={props.list} />
+            
         </div>
     )
 }

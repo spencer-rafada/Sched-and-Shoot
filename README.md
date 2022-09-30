@@ -23,8 +23,8 @@
 # Useful Websites
 
 {Make a list of websites that you found helpful in this project}
-* [Web Site Name](http://url.link.goes.here)
-* [Web Site Name](http://url.link.goes.here)
+* [Communication Between React Components](https://stackoverflow.com/questions/29100774/reactjs-setstate-on-parent-inside-child-component)
+* [How to add items in React](https://www.robinwieruch.de/react-add-item-to-list/)
 
 # Future Work
 

@@ -1,28 +1,34 @@
 import { React, useState } from 'react'
 
-function Add() {
+function Add(props) {
     const [f_name, setFName] = useState("");
     const [l_name, setLName] = useState("");
     const [age, setAge] = useState(0);
     const [city, setCity] = useState("");
 
-    const handleSubmit = async (event) => {
-        try{
-            let res = await fetch("http://localhost:5000/photographers", {
-                method: "POST",
-                body: JSON.stringify({
-                    first_name: f_name,
-                    last_name: l_name,
-                    age: age,
-                    city: city
-                })
-                .then(res => console.log(res))
-                .catch(error => console.log(error))
-            });
-        } catch (err) {
-            console.log(err);
-        }
+    const handleFNameChange = (e) => {
+        setFName(e.target.value);
     }
+    const handleLNameChange = (e) => {
+        setLName(e.target.value);
+    }
+    const handleAgeChange = (e) => {
+        setAge(e.target.value);
+    }
+    const handleCityChange = (e) => {
+        setCity(e.target.value);
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const photographer = {
+            first_name: f_name,
+            last_name: l_name,
+            age: age,
+            city: city
+        }
+        props.onAdd(photographer)
+    }
+
     return (
     <div>
 
@@ -35,26 +41,29 @@ function Add() {
                             type="text" 
                             value={f_name}
                             placeholder="First Name"
-                            onChange={(e)=>setFName(e.target.value)}/>
+                            required
+                            onChange={(e)=>{handleFNameChange(e)}}/>
+                            {/* Handle Change will be called when user write first
+                            name in input box */}
                         <input type="text"
                             value={l_name}
                             placeholder="Last Name"
-                            onChange={(e)=>setLName(e.target.value)}/>
+                            onChange={(e)=>{handleLNameChange(e)}}/>
                         <input type="number" 
                             value={age}
                             placeholder="Age"
-                            onChange={(e)=>setAge(e.target.value)}/>
+                            onChange={(e)=>{handleAgeChange(e)}}/>
                         <input type="text"
                             value={city}
                             placeholder="City"
-                            onChange={(e)=>setCity(e.target.value)}/>
+                            onChange={(e)=>{handleCityChange(e)}}/>
                     </label>
                 </fieldset>
                 <button type="submit">Add</button>
             </form>
         </div>
     </div>
-  )
+    )
 }
 
 export default Add;

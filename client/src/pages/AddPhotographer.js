@@ -1,10 +1,12 @@
 import React from 'react'
 import { Add } from '../components'
 
-function AddPhotographer() {
+function AddPhotographer(props) {
   return (
     <div>
-      <Add />
+      <Add 
+        list={props.list}
+        onAdd={props.onAdd}/>
     </div>
   )
 }
