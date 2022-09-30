@@ -1,28 +1,22 @@
 import Photographer from '../models/photographerSchema.js';
 
-// Controller for Photographers router
-// asynchronous function to get Photographers from database
-export const getPhotographers = async (req, res) => {
-    try{
-        const photographers = await Photographer.find();
 
-        res.status(200).json(photographers);
+// Turn this to async as well
+export const getPhotographers = (req, res) => {
+    res.json({message: "GET new photographer"})
+    console.log("GET")
+}
+
+export const createPhotographer = async (req, res) => {
+    const data = req.body;
+    try {
+        const photographer = new Photographer(data);
+        await photographer.save();
     } catch (error) {
-        res.status(404).json({ message: error.message });
+        console.log(error);
     }
 }
 
-// asynchronous function to post Photographers to database
-export const createPhotographers = async (req, res) => {
-    const photographer = req.body;
-
-    const newPhotographer = new Photographer(photographer);
-
-    try{
-        await newPhotographer.save();
-
-        res.status(201).json(newPhotographer);
-    } catch (error) {
-        res.status(409).json({ message: error.message });
-    }
+export const deletePhotographer = (req, res) => {
+    res.json({message: "DELETE new photographer"})
 }

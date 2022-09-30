@@ -1,8 +1,11 @@
 import React from 'react'
+import { Add } from '../components'
 
 function AddPhotographer() {
   return (
-    <div>AddPhotographer</div>
+    <div>
+      <Add />
+    </div>
   )
 }
 

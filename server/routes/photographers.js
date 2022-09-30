@@ -1,10 +1,12 @@
 import express from 'express';
+import cors from 'cors'
 
-import { getPhotographers, createPhotographers } from '../controllers/photographers.js'
+import { getPhotographers, createPhotographer, deletePhotographer } from '../controllers/photographers.js'
 
 const router = express.Router();
 
 router.get('/', getPhotographers);
-router.post('/', createPhotographers);
+router.post('/', cors(), createPhotographer);
+router.delete('/', deletePhotographer)
 
 export default router;
