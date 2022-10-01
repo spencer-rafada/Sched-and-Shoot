@@ -10,7 +10,7 @@ function NavBar() {
             <Link className="logo" to="/">Snap and Shoot</Link>
           </li>
           <li className="nav-right">
-            <Link to="/search">Photographers in your area</Link>
+            <Link to="/search">Photographers</Link>
           </li>
           <li className="nav-right">
             <Link to="/add">Add</Link>

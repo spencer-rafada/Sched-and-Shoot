@@ -10,9 +10,8 @@ function App() {
 
     function handleAdd(list) {
         const newList = photographersList.concat(list);
-        alert(list.first_name)
+        alert(`${list.first_name} has been registered as a Photographer.`)
         setPhotographersList(newList);
-        console.log(photographersList)
     }
 
     // Routing
