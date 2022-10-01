@@ -30,35 +30,42 @@ function Add(props) {
     }
 
     return (
-    <div>
-
-        <h1>Add Photographer</h1>
+    <div className="add">
         <div className="form">
+            <h1>Add a Photographer ♥</h1>
             <form onSubmit={handleSubmit}>
-                <fieldset>
-                    <label>
+                    <label for="fname">First Name
                         <input 
                             type="text" 
                             value={f_name}
-                            placeholder="First Name"
+                            placeholder="Your First Name..."
                             required
                             onChange={(e)=>{handleFNameChange(e)}}/>
                             {/* Handle Change will be called when user write first
                             name in input box */}
+                    </label>
+                    <br></br>
+                    <label for="lname">Last Name
                         <input type="text"
                             value={l_name}
-                            placeholder="Last Name"
+                            placeholder="Your Last Name..."
                             onChange={(e)=>{handleLNameChange(e)}}/>
+                    </label>
+                    <br></br>
+                    <label className="age" for="age">Age
                         <input type="number" 
                             value={age}
                             placeholder="Age"
                             onChange={(e)=>{handleAgeChange(e)}}/>
+                    </label>
+                    <br></br>
+                    <label for="city">City
                         <input type="text"
                             value={city}
                             placeholder="City"
                             onChange={(e)=>{handleCityChange(e)}}/>
                     </label>
-                </fieldset>
+                    <br></br>
                 <button type="submit">Add</button>
             </form>
         </div>

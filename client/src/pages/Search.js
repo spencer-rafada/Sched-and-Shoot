@@ -5,7 +5,6 @@ function Search(props) {
     return (
         <div>
             <Photographers list={props.list} />
-            
         </div>
     )
 }

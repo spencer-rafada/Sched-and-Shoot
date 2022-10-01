@@ -18,7 +18,7 @@ function App() {
     // Routing
     return (
         <Router>
-            <div>
+            <div className="app">
                 <NavBar />
                 <Routes>
                     <Route exact path ='/' element={<Home />}></Route>

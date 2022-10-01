@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Poppins:wght@600&family=Tangerine:wght@700&display=swap');
+
+:root {
+    --primary-color: #fdfcdc;
+    --secondary-color: #9F7F7F;
+    --secondary-color-accent: #bde0fe;
+    --accent1-color: #ffafcc;
+    --accent2-color: #cdb4db;
+    --accent3-color: #cdb4db;
+
+    --title-font: 'Tangerine', cursive;
+    --heading-font: 'Poppins', sans-serif;
+    --paragraph-font: 'Poiret-One', cursive;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #E8EEF2;
+}
+
+.app > * {
+    font-family: var(--heading-font);
+}
+
+/* NavBar */
+.NavBar > *{
+    background-color: white;
+    font-family: var(--heading-font);
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.NavBar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.NavBar li {
+    display: inline;
+    float: left;
+}
+
+.NavBar li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+.NavBar li a:visited {
+    color: var(--secondary-color);
+}
+
+.NavBar .logo{
+    font-family: var(--title-font);
+    font-size: 24px;
+}
+
+.NavBar .nav-right{
+    float: right;
+    color: var(--secondary-color);
+}
+
+/*
+.NavBar .nav-right:hover{
+    background-color: var(--secondary-color-accent);
+}
+*/
+
+/* Photographer Card */
+.photographer-card{
+    margin-top: 20px;
+    justify-content: center;
+    padding: 50px;
+}
+
+/* Add Form */
+.add{
+    padding: 20px;
+}
+
+.add input[type=text]{
+    width: 80%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+
+.add input[type=number]{
+    width: 13%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+
+.add label {
+    display: inline;
+}
+
+.add button[type=submit]{
+    background-color: #ffaaee;
+    cursor: pointer;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+}
+
+.add button[type=submit]:hover{
+    background-color: var(--accent1-color);
+}
+
+.add .form {
+    background-color: #f2f2f2;
+    width: 40%;
+    padding: 20px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
