@@ -1,6 +1,6 @@
 # Overview
 
-{Important!  Do not say in this section that this is college assignment.  Talk about what you are trying to accomplish as a software engineer to further your learning.}
+As a Software Engineer, I try to be updated with the trending technology stacks commonly used in the industry by learning, watching videos, and reading documentations about these technologies. After learning these technologies, I try to apply my knowledge by creating passion projects on the side to maintain a habit of learning even outside the classroom environment.
 
 {Provide a description the web app that you wrote. Describe how to start a test server on your computer and what website to open up to see the first page of the app.}
 
