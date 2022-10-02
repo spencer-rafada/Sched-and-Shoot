@@ -7,7 +7,7 @@ Book your photographer on your next photoshoot! Sched and Shoot Web App makes us
 
 The purpose of writing this software is to further my knowledge of Web Development by learning a new web framework. In this case, I decided to learn ReactJS.
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Development Log #1](https://youtu.be/zZfzqhGGnAE)
 
 # Web Pages
 
