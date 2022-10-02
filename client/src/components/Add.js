@@ -1,23 +1,34 @@
 import { React, useState } from 'react'
 
+// This component is use to add the photographer in the list or database
 function Add(props) {
     const [f_name, setFName] = useState("");
     const [l_name, setLName] = useState("");
     const [age, setAge] = useState(0);
     const [city, setCity] = useState("");
 
+    // This handles the change in first_name
     const handleFNameChange = (e) => {
         setFName(e.target.value);
     }
+    
+    // This handles the change in last_name
     const handleLNameChange = (e) => {
         setLName(e.target.value);
     }
+
+    // This handles the change in age
     const handleAgeChange = (e) => {
         setAge(e.target.value);
     }
+
+    // This handles the change in city
     const handleCityChange = (e) => {
         setCity(e.target.value);
     }
+
+    // This handles the even when submit is sent. It sets the state of the photographersList
+    // using the props.onAdd function
     const handleSubmit = (e) => {
         e.preventDefault();
         const photographer = {

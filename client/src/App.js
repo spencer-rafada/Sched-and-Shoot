@@ -14,7 +14,8 @@ function App() {
         setPhotographersList(newList);
     }
 
-    // Routing
+    // Routing of the Application.
+    // The routing also includes the props send out to each component
     return (
         <Router>
             <div className="app">
