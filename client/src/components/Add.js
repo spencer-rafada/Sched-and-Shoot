@@ -45,7 +45,7 @@ function Add(props) {
         <div className="form">
             <h1>Add a Photographer ♥</h1>
             <form onSubmit={handleSubmit}>
-                    <label for="fname">First Name
+                    <label >First Name
                         <input 
                             type="text" 
                             value={f_name}
@@ -56,23 +56,25 @@ function Add(props) {
                             name in input box */}
                     </label>
                     <br></br>
-                    <label for="lname">Last Name
+                    <label >Last Name
                         <input type="text"
                             value={l_name}
+                            required
                             placeholder="Your Last Name..."
                             onChange={(e)=>{handleLNameChange(e)}}/>
                     </label>
                     <br></br>
-                    <label className="age" for="age">Age
+                    <label className="age" >Age
                         <input type="number" 
                             value={age}
                             placeholder="Age"
                             onChange={(e)=>{handleAgeChange(e)}}/>
                     </label>
                     <br></br>
-                    <label for="city">City
+                    <label>City
                         <input type="text"
                             value={city}
+                            required
                             placeholder="City"
                             onChange={(e)=>{handleCityChange(e)}}/>
                     </label>
