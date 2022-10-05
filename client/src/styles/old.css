@@ -32,18 +32,36 @@ body, html {
     text-decoration: none;
 }
 
+.NavBar li {
+    display: inline;
+    float: left;
+}
+
+.NavBar li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: var(--secondary-color);
+}
 
 .NavBar a:visited {
     color: var(--secondary-color);
 }
 
 .NavBar .logo{
+    display: block;
     font-family: var(--title-font);
-    font-size: 24px;
+    font-size: 40px;
 }
 
 .NavBar .nav-right {
     float: right;
+}
+
+.NavBar .nav-right{
+    float: right;
+    color: var(--secondary-color);
 }
 
 /*

@@ -39,6 +39,34 @@ export const createPhotographer = async (req, res) => {
   console.log("POST");
 };
 
-export const deletePhotographer = (req, res) => {
-  res.json({ message: "DELETE new photographer" });
+export const deletePhotographer = async (req, res) => {
+  try {
+    await client.connect();
+    const data = req.body[0];
+
+    const result = await coll.deleteOne({
+      first_name: data.first_name,
+    });
+    console.log(result);
+  } finally {
+    await client.close();
+  }
+  console.log("DELETE");
+};
+
+export const updatePhotographer = async (req, res) => {
+  try {
+    await client.connect();
+
+    console.log(req.body);
+    const data = req.body[0];
+
+    const filter = { first_name: data.first_name };
+    const updateData = { $set: { first_name: data.updateData } };
+
+    const result = await coll.updateOne(filter, updateData);
+  } finally {
+    await client.close();
+  }
+  console.log("PUT");
 };
