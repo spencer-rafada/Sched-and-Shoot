@@ -7,15 +7,15 @@ const client = new MongoClient(URL);
 const db = client.db("test");
 const coll = db.collection("photographers");
 
-const cursor = coll.find();
 
 // Turn this to async as well
 export const getPhotographers = async (req, res) => {
     try {
         await client.connect(); 
-
-
+        
+        
         // takes the [0] of the array
+        const cursor = coll.find();
         const data = await cursor.toArray();
 
         res.json(data);
