@@ -5,17 +5,6 @@ import Search from "./Search";
 import Add from "./Add";
 import Delete from "./Delete";
 import Modify from "./Modify";
-import Dropdown from "./Dropdown";
-import DropdownButton from "./DropdownButton";
+import SignIn from "./SignIn";
 
-export {
-  Content,
-  NavBar,
-  Photographers,
-  Search,
-  Add,
-  Delete,
-  Modify,
-  Dropdown,
-  DropdownButton,
-};
+export { Content, NavBar, Photographers, Search, Add, Delete, Modify, SignIn };

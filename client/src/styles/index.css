@@ -24,33 +24,78 @@ body, html {
 }
 
 /* NavBar */
-.NavBar > *{
-    display: flex;
+.NavBar {
+    overflow: hidden;
     background-color: white;
     font-family: var(--heading-font);
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Links inside the bar */
+.NavBar a{
+    float: right;
+    font-size: 16px;
+    color: var(--secondary-color);
+    text-align: right;
+    padding: 14px 16px;
     text-decoration: none;
 }
 
+.NavBar .logo {
+    float: left;
+}
 
-.NavBar a:visited {
+/* Links inside the bar that is visited */
+.NavBar a:visited{
     color: var(--secondary-color);
+    text-decoration: none;
 }
 
-.NavBar .logo{
-    font-family: var(--title-font);
-    font-size: 24px;
-}
-
-.NavBar .nav-right {
+.dropdown {
     float: right;
+    overflow: hidden; 
 }
 
-/*
-.NavBar .nav-right:hover{
+/* Dropdown Button */
+.NavBar button {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: var(--secondary-color);
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    text-align: right;
+}
+
+/* Hover on NavBar */
+.NavBar a:hover, .NavBar button:hover{
     background-color: var(--secondary-color-accent);
 }
-*/
+
+/* Don't change color when hover on logo */
+.NavBar .logo:hover {
+    background-color: white;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content{
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a{
+    float: none;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
 
 /* Photographer Card */
 .photographer-card{

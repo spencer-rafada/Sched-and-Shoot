@@ -1,29 +1,34 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Dropdown } from "../components";
+import { React, useState } from "react";
 
-function NavBar(props) {
+function NavBar() {
+  const [toggle, setToggle] = useState("none");
+  const handleClick = () => {
+    if (toggle === "none") {
+      setToggle("block");
+    } else {
+      setToggle("none");
+    }
+  };
+
   return (
-    <nav className="NavBar">
-      <div className="logo">
-        <Link to="/">Snap and Shoot</Link>
+    <div className="NavBar">
+      <a className="logo" href="/">
+        Snap and Shoot
+      </a>
+      <a className="nav-sign-in" href="/signin">
+        add signin here
+      </a>
+      <div className="dropdown">
+        <button className="dropdown-button" onClick={handleClick}>
+          Dropdown Icon here
+        </button>
+        <div style={{ display: toggle }} className="dropdown-content">
+          <a href="/add">Add</a>
+          <a href="/search">Search</a>
+          <a href="/module2">Module 2</a>
+        </div>
       </div>
-      <div className="nav-right">
-        <Dropdown>
-          <ul>
-            <li>
-              <Link to="/module2">Module 2</Link>
-            </li>
-            <li>
-              <Link to="/add">Add</Link>
-            </li>
-            <li>
-              <Link to="/search">Search</Link>
-            </li>
-          </ul>
-        </Dropdown>
-      </div>
-    </nav>
+    </div>
   );
 }
 

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import axios from "axios";
 
 import { NavBar } from "./components";
-import { Home, AddPhotographer, Search, Cloud } from "./pages";
+import { Home, AddPhotographer, Search, Cloud, Sign } from "./pages";
 
 function App() {
   // photographersList states
@@ -126,6 +126,7 @@ function App() {
               />
             }
           ></Route>
+          <Route exact path="/signin" element={<Sign />}></Route>
         </Routes>
       </div>
     </Router>
