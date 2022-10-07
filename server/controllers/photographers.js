@@ -44,9 +44,7 @@ export const deletePhotographer = async (req, res) => {
     await client.connect();
     const data = req.body[0];
 
-    const result = await coll.deleteOne({
-      first_name: data.first_name,
-    });
+    const result = await coll.deleteMany(data);
     console.log(result);
   } finally {
     await client.close();

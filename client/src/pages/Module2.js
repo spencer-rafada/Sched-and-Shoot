@@ -8,14 +8,19 @@ function Cloud(props) {
     setToggle(!toggle);
   };
   return (
-    <div>
-      <button onClick={handleButtonClick}>Click Me!</button>
+    <div className="module2">
+      <div>
+        <button onClick={handleButtonClick}>Click Me!</button>
+      </div>
       {toggle && (
         <div>
           <Add list={props.list} onAdd={props.onAdd} />
-          <Photographers list={props.list} />
           <Delete onDelete={props.onDelete} />
           <Modify onModify={props.onModify} />
+          <hr></hr>
+          <div>
+            <Photographers list={props.list} />
+          </div>
         </div>
       )}
     </div>

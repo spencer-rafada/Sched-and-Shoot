@@ -46,7 +46,8 @@ function SignIn() {
               }}
             />
           </label>
-          <button type="submit">Add</button>
+          <br></br>
+          <button type="submit">Login</button>
         </form>
       </div>
     </div>

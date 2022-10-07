@@ -35,6 +35,7 @@ export default function Delete(props) {
             {/* Handle Change will be called when user write first
                       name in input box */}
           </label>
+          <br></br>
           <button type="submit">Delete</button>
         </form>
       </div>

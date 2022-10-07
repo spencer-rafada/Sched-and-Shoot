@@ -105,11 +105,16 @@ body, html {
 }
 
 /* Add Form */
-.add{
+.form{
     padding: 20px;
+    margin: 20px;
+    min-width: 600px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
-.add input[type=text]{
+.form input[type=text], .form input[type=password]{
     width: 80%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -119,7 +124,7 @@ body, html {
     margin-bottom: 16px;
 }
 
-.add input[type=number]{
+.form input[type=number]{
     width: 13%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -129,26 +134,77 @@ body, html {
     margin-bottom: 16px;
 }
 
-.add label {
+.form label {
     display: inline;
 }
 
-.add button[type=submit]{
+.form button[type=submit]{
     background-color: #ffaaee;
     cursor: pointer;
     padding: 12px 20px;
     border: none;
     border-radius: 4px;
+    justify-content: center;
+    text-align: center;
 }
 
-.add button[type=submit]:hover{
+.form button[type=submit]:hover{
     background-color: var(--accent1-color);
 }
 
-.add .form {
-    background-color: #f2f2f2;
-    width: 40%;
-    padding: 20px;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+/* 404 Page Not Found */
+.page-not-found {
+    text-align: center;
+    margin: auto;
+    padding-top: 10%;
+    font-size: 2em;
 }
 
+.page-not-found-msg {
+    margin: 0; 
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.page-not-found .back{
+    margin-left: 10px;
+    color: red;
+}
+
+.module2{
+    display: flex;
+    justify-content: center;
+}
+
+.module2 button{
+    display: block;
+}
+
+.sign-in{
+    display:flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.sign-in button{
+    margin-top: 20px;
+    justify-content: center;
+
+}
+.add{
+    display:flex;
+    text-align: center;
+    justify-content: center;
+}
+.delete{
+    display:flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.modify{
+    display:flex;
+    text-align:center;
+    justify-content:center;
+}

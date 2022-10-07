@@ -17,7 +17,7 @@ function Modify(props) {
   // This handles the even when submit is sent. It sets the state of the photographersList
   // using the props.onAdd function
   const handleModify = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     const photographer = {
       first_name: f_name,
       updateData: updateData,
@@ -46,7 +46,7 @@ function Modify(props) {
           </label>
           <br></br>
           <label>
-            Update Name
+            Modify Name
             <input
               type="text"
               value={updateData}
@@ -57,6 +57,7 @@ function Modify(props) {
               }}
             />
           </label>
+          <br></br>
           <button type="submit">Modify</button>
         </form>
       </div>
