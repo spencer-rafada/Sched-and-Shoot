@@ -23,9 +23,9 @@ function NavBar() {
           Dropdown Icon here
         </button>
         <div style={{ display: toggle }} className="dropdown-content">
-          <a href="/add">Add</a>
-          <a href="/search">Search</a>
+          <a href="/photographers">Photographers</a>
           <a href="/module2">Module 2</a>
+          <a href="/">Log Out</a>
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import { React, useState } from "react";
-import { Add, Photographers, Delete, Modify } from "../components";
+import { Add, Delete, Modify } from "./Admin";
+import PhotographersPage from "./Photographers/PhotographersPage/PhotographersPage";
 
 function Cloud(props) {
   const [toggle, setToggle] = useState(false);
@@ -19,7 +20,7 @@ function Cloud(props) {
           <Modify onModify={props.onModify} />
           <hr></hr>
           <div>
-            <Photographers list={props.list} />
+            <PhotographersPage list={props.list} />
           </div>
         </div>
       )}
