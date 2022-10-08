@@ -29,11 +29,12 @@ body, html {
     background-color: white;
     font-family: var(--heading-font);
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    padding: 5px;
 }
 
 /* Links inside the bar */
 .NavBar a{
-    float: right;
+    float: left;
     font-size: 16px;
     color: var(--secondary-color);
     text-align: right;
@@ -52,7 +53,7 @@ body, html {
 }
 
 .dropdown {
-    float: right;
+    float: left;
     overflow: hidden; 
 }
 
@@ -67,6 +68,11 @@ body, html {
     font-family: inherit;
     margin: 0;
     text-align: right;
+}
+
+.nav-sign-in {
+    border-radius: 5px;
+    background-color: orange;
 }
 
 /* Hover on NavBar */

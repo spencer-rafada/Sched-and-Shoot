@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 // send POST request to sign in data to server
 async function loginUser(credentials) {
@@ -19,6 +20,7 @@ async function loginUser(credentials) {
 function LoginForm({ setToken }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  let navigate = useNavigate();
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -33,6 +35,7 @@ function LoginForm({ setToken }) {
     const token = await loginUser({ email, password });
     console.log(`this is the token: ${token}`);
     setToken(token);
+    navigate("/");
   };
 
   return (

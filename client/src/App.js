@@ -15,15 +15,15 @@ import useToken from "./services/useToken";
 function App() {
   const { token, setToken } = useToken();
 
-  if (!token) {
-    return <LoginPage setToken={setToken} />;
-  }
+  //if (!token) {
+  //return <LoginPage setToken={setToken} />;
+  //}
   // Routing of the Application.
   // The routing also includes the props send out to each component
   return (
     <Router>
       <div className="app">
-        <NavBar />
+        <NavBar token={token} />
         <Routes>
           <Route exact path="/" element={<HomePage />}></Route>
           <Route
@@ -32,7 +32,11 @@ function App() {
             element={<PhotographersPage />}
           ></Route>
           <Route exact path="/admin" element={<AdminPage />}></Route>
-          <Route exact path="/signin" element={<LoginPage />}></Route>
+          <Route
+            exact
+            path="/signin"
+            element={<LoginPage setToken={setToken} />}
+          ></Route>
           <Route exact path="/module2" element={<Cloud />}></Route>
           <Route path="*" element={<PageNotFound />}></Route>
         </Routes>

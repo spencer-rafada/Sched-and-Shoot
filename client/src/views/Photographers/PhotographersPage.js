@@ -1,6 +1,5 @@
 import { React, useState, useEffect } from "react";
-import { Grid } from "@mui/material";
-import Photographer from "../PhotographerBio/Photographer";
+import PhotographersFeed from "./PhotographersFeed/PhotographersFeed";
 import axios from "axios";
 
 function PhotographersPage() {
@@ -25,23 +24,8 @@ function PhotographersPage() {
       });
   }
   return (
-    <div className="photographer-card">
-      <Grid
-        container
-        rowSpacing={2}
-        alignItems="flex-start"
-        justifyContent="space-evenly"
-      >
-        {photographersList.map((item, key) => (
-          <Grid item xs={2} sm={4} md={4} key={key}>
-            <Photographer
-              first_name={item.first_name}
-              last_name={item.last_name}
-              city={item.city}
-            />
-          </Grid>
-        ))}
-      </Grid>
+    <div>
+      <PhotographersFeed list={photographersList} />
     </div>
   );
 }

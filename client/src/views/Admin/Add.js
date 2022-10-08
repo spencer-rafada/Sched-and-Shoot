@@ -1,4 +1,5 @@
 import { React, useState } from "react";
+import FileBase64 from "react-file-base64";
 
 // This component is use to add the photographer in the list or database
 function Add(props) {
@@ -6,6 +7,7 @@ function Add(props) {
   const [l_name, setLName] = useState("");
   const [age, setAge] = useState(0);
   const [city, setCity] = useState("");
+  const [img, setImg] = useState("");
 
   // This handles the change in first_name
   const handleFNameChange = (e) => {
@@ -27,6 +29,11 @@ function Add(props) {
     setCity(e.target.value);
   };
 
+  // This handles the image change
+  const handleImgChange = ({ base64 }) => {
+    setImg(base64);
+  };
+
   // This handles the even when submit is sent. It sets the state of the photographersList
   // using the props.onAdd function
   const handleSubmit = (e) => {
@@ -36,6 +43,7 @@ function Add(props) {
       last_name: l_name,
       age: age,
       city: city,
+      img: img,
     };
     props.onAdd(photographer);
   };
@@ -98,6 +106,9 @@ function Add(props) {
             />
           </label>
           <br></br>
+          <div>
+            <FileBase64 multiple={false} onDone={handleImgChange} />
+          </div>
           <button type="submit">Add</button>
         </form>
       </div>
