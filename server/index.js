@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 
 import photographerRoutes from "./routes/photographers.js";
+import signinRoutes from "./routes/signin.js";
 
 const app = express();
 app.use(cors());
@@ -13,10 +14,7 @@ app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 
 app.use("/photographers", photographerRoutes);
-app.use("/signin", (req, res) => {
-  console.log(req.body);
-  res.send({ token: "test123" });
-});
+app.use("/signin", signinRoutes);
 
 // Connect to database
 const URL =

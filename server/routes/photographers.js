@@ -8,6 +8,7 @@ import {
 
 const router = express.Router();
 
+// HTTP Requests
 router.get("/", getPhotographers);
 router.post("/", createPhotographer);
 router.delete("/", deletePhotographer);

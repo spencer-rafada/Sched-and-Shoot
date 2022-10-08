@@ -13,6 +13,7 @@ export const getPhotographers = async (req, res) => {
   try {
     await client.connect();
 
+    // Get all of the documents in the collection
     const cursor = coll.find();
 
     // takes the [0] of the array
@@ -22,7 +23,7 @@ export const getPhotographers = async (req, res) => {
   } finally {
     await client.close();
   }
-  console.log("GET");
+  console.log(`GET: all photographers`);
 };
 
 export const createPhotographer = async (req, res) => {
