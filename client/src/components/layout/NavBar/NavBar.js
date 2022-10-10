@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
+import Logout from "../../buttons/Logout";
 
 function NavBar(props) {
   const [toggle, setToggle] = useState("none");
@@ -17,7 +18,7 @@ function NavBar(props) {
         Snap and Shoot
       </a>
       {!props.token && (
-        <a className="nav-sign-in" href="/signin">
+        <a className="nav-sign-in" href="/auth/signin">
           Sign In
         </a>
       )}
@@ -28,7 +29,11 @@ function NavBar(props) {
         <div style={{ display: toggle }} className="dropdown-content">
           <a href="/photographers">Photographers</a>
           <a href="/module2">Module 2</a>
-          <a href="/">Log Out</a>
+          {props.token && (
+            <a href="/">
+              <Logout props={props.setToken} />
+            </a>
+          )}
         </div>
       </div>
     </div>

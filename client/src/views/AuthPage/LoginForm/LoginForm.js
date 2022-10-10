@@ -33,15 +33,16 @@ function LoginForm({ setToken }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const token = await loginUser({ email, password });
+    // Add functionality here to check for the response of the backend
     console.log(`this is the token: ${token}`);
     setToken(token);
-    navigate("/");
+    navigate("/dashboard");
   };
 
   return (
     <div className="sign-in">
       <div className="form">
-        <h1>Sign In ♥</h1>
+        <h1>Sign In</h1>
         <form onSubmit={handleSubmit}>
           <label>
             Email
@@ -73,6 +74,7 @@ function LoginForm({ setToken }) {
           <br></br>
           <button type="submit">Login</button>
         </form>
+        <button>Register Now</button>
       </div>
     </div>
   );

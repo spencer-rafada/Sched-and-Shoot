@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   AdminPage,
   HomePage,
-  LoginPage,
+  AuthPage,
   PageNotFound,
   PhotographersPage,
   Cloud,
@@ -23,7 +23,7 @@ function App() {
   return (
     <Router>
       <div className="app">
-        <NavBar token={token} />
+        <NavBar token={token} setToken={setToken} />
         <Routes>
           <Route exact path="/" element={<HomePage />}></Route>
           <Route
@@ -34,8 +34,8 @@ function App() {
           <Route exact path="/admin" element={<AdminPage />}></Route>
           <Route
             exact
-            path="/signin"
-            element={<LoginPage setToken={setToken} />}
+            path="/auth/signin"
+            element={<AuthPage setToken={setToken} />}
           ></Route>
           <Route exact path="/module2" element={<Cloud />}></Route>
           <Route path="*" element={<PageNotFound />}></Route>
