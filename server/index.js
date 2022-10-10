@@ -14,7 +14,7 @@ app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 
 app.use("/photographers", photographerRoutes);
-app.use("/signin", signinRoutes);
+app.use("/auth/signin", signinRoutes);
 
 // Connect to database
 const URL =
