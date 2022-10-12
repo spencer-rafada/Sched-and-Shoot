@@ -4,6 +4,7 @@ import AuthPage from "./AuthPage/AuthPage";
 import PageNotFound from "./PageNotFound/PageNotFound";
 import PhotographersPage from "./Photographers/PhotographersPage";
 import Cloud from "./Module2";
+import MyProfilePage from "./MyProfile/MyProfilePage";
 
 export {
   AdminPage,
@@ -12,4 +13,5 @@ export {
   PageNotFound,
   Cloud,
   PhotographersPage,
+  MyProfilePage,
 };

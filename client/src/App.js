@@ -8,6 +8,7 @@ import {
   PageNotFound,
   PhotographersPage,
   Cloud,
+  MyProfilePage,
 } from "./views";
 import NavBar from "./components/layout/NavBar/NavBar";
 import useToken from "./services/useToken";
@@ -38,6 +39,7 @@ function App() {
             element={<AuthPage setToken={setToken} />}
           ></Route>
           <Route exact path="/module2" element={<Cloud />}></Route>
+          <Route exact path="/profile" element={<MyProfilePage />}></Route>
           <Route path="*" element={<PageNotFound />}></Route>
         </Routes>
       </div>

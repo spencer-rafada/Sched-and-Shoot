@@ -27,13 +27,10 @@ function NavBar(props) {
           <MenuIcon />
         </button>
         <div style={{ display: toggle }} className="dropdown-content">
+          {props.token && <a href="/profile">My Profile</a>}
           <a href="/photographers">Photographers</a>
           <a href="/module2">Module 2</a>
-          {props.token && (
-            <a href="/">
-              <Logout props={props.setToken} />
-            </a>
-          )}
+          {props.token && <Logout props={props.setToken} />}
         </div>
       </div>
     </div>

@@ -3,9 +3,25 @@ import LoginForm from "./LoginForm/LoginForm";
 import RegisterForm from "./RegisterForm/RegisterForm";
 
 function AuthPage(props) {
-  const [register, setRegister] = useState(false);
+  const [state, setState] = useState("login");
 
-  return <LoginForm setToken={props.setToken} />;
+  const handleCreateAccount = () => {
+    if (state === "login") {
+      setState("register");
+    } else {
+      setState("login");
+    }
+  };
+
+  return (
+    <div>
+      {state === "login" && (
+        <LoginForm setState={handleCreateAccount} setToken={props.setToken} />
+      )}
+
+      {state === "register" && <RegisterForm setState={handleCreateAccount} />}
+    </div>
+  );
 }
 
 export default AuthPage;

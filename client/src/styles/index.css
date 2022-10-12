@@ -214,3 +214,8 @@ body, html {
     text-align:center;
     justify-content:center;
 }
+
+/* Log in page */
+.log-in-error{
+    color: red;
+}
