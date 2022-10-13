@@ -22,10 +22,14 @@ const URL =
 const PORT = process.env.PORT || 5000;
 
 mongoose
-  .connect(URL)
+  .connect(process.env.MONGODB_URI || URL)
   .then(() => {
     app.listen(PORT, () => console.log(`Server running on ${PORT}`));
   })
   .catch((error) => {
     console.log(error.message);
   });
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("../client/build"));
+}

@@ -4,9 +4,15 @@
   "description": "",
   "main": "index.js",
   "type": "module",
+  "engine": {
+    "node": "17.5"
+  },
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "build": "cd .. && cd client && npm run build",
+    "install-client": "cd .. && cd client && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build"
   },
   "keywords": [],
   "author": "Spencer Rafada",

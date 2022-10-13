@@ -219,3 +219,13 @@ body, html {
 .log-in-error{
     color: red;
 }
+
+.register-link {
+    text-decoration: underline;
+    color: blue
+}
+
+.register-link:hover {
+    cursor: pointer;
+    /* color: rebeccapurple; */
+}

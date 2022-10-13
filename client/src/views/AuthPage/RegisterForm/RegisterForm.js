@@ -36,7 +36,9 @@ export default function RegisterForm({ setState }) {
     <div className="register">
       <div className="form">
         <h1>Register</h1>
-        <p onClick={setState}>Have an account already?</p>
+        <p onClick={setState} className="register-link">
+          Have an account already?
+        </p>
         <form onSubmit={handleSubmit}>
           <label>
             Email

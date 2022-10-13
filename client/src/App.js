@@ -16,9 +16,9 @@ import useToken from "./services/useToken";
 function App() {
   const { token, setToken } = useToken();
 
-  //if (!token) {
-  //return <LoginPage setToken={setToken} />;
-  //}
+  // if (!token) {
+  //   return <AuthPage setToken={setToken} />;
+  // }
   // Routing of the Application.
   // The routing also includes the props send out to each component
   return (
