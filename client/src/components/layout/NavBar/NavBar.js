@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import Logout from "../../buttons/Logout";
+import { Link } from "react-router-dom";
 
 function NavBar(props) {
   const [toggle, setToggle] = useState("none");
@@ -29,7 +30,7 @@ function NavBar(props) {
         <div style={{ display: toggle }} className="dropdown-content">
           {props.token && <a href="/profile">My Profile</a>}
           <a href="/photographers">Photographers</a>
-          <a href="/module2">Module 2</a>
+          {props.token && <Link to="/admin">Admin</Link>}
           {props.token && <Logout props={props.setToken} />}
         </div>
       </div>

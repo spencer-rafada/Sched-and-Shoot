@@ -20,7 +20,7 @@ async function loginUser(credentials) {
   });
 }
 
-function LoginForm({ setToken, setState }) {
+function LoginForm({ setToken, setState, handleEmailPage }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
@@ -42,8 +42,10 @@ function LoginForm({ setToken, setState }) {
     setToken(token.data);
     console.log(`this is the token: ${token.data.token}`);
     if (token.data.token === "token1234") {
+      console.log(email);
+      handleEmailPage(email);
       setError(false);
-      navigate("/");
+      navigate("/dashboard");
     } else {
       setError(true);
     }

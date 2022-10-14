@@ -2,7 +2,7 @@ import { React, useState } from "react";
 import ProfileCard from "./ProfileCard/ProfileCard";
 import EditProfile from "./EditProfile/EditProfile";
 
-function MyProfilePage() {
+function MyProfilePage({ email }) {
   const [toggle, setToggle] = useState("profile");
 
   const handleEditProfile = () => {
@@ -15,7 +15,9 @@ function MyProfilePage() {
 
   return (
     <div>
-      {toggle === "profile" && <ProfileCard setToggle={handleEditProfile} />}
+      {toggle === "profile" && (
+        <ProfileCard setToggle={handleEditProfile} email={email} />
+      )}
       {toggle === "edit" && <EditProfile setToggle={handleEditProfile} />}
     </div>
   );

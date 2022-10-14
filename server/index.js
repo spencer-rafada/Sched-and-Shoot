@@ -5,6 +5,7 @@ import cors from "cors";
 
 import photographerRoutes from "./routes/photographers.js";
 import signinRoutes from "./routes/auth.js";
+import profileRoutes from "./routes/profile.js";
 
 const app = express();
 app.use(cors());
@@ -15,6 +16,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 
 app.use("/photographers", photographerRoutes);
 app.use("/auth", signinRoutes);
+app.use("/profile", profileRoutes);
 
 // Connect to database
 const URL =

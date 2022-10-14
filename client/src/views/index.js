@@ -3,7 +3,7 @@ import HomePage from "./Home/HomePage/HomePage";
 import AuthPage from "./AuthPage/AuthPage";
 import PageNotFound from "./PageNotFound/PageNotFound";
 import PhotographersPage from "./Photographers/PhotographersPage";
-import Cloud from "./Module2";
+import DashboardPage from "./Dashboard/DashboardPage";
 import MyProfilePage from "./MyProfile/MyProfilePage";
 
 export {
@@ -11,7 +11,7 @@ export {
   HomePage,
   AuthPage,
   PageNotFound,
-  Cloud,
   PhotographersPage,
   MyProfilePage,
+  DashboardPage,
 };

@@ -2,7 +2,7 @@ import { React, useState } from "react";
 import LoginForm from "./LoginForm/LoginForm";
 import RegisterForm from "./RegisterForm/RegisterForm";
 
-function AuthPage(props) {
+function AuthPage({ setToken, handleEmail }) {
   const [state, setState] = useState("login");
 
   const handleCreateAccount = () => {
@@ -16,7 +16,11 @@ function AuthPage(props) {
   return (
     <div>
       {state === "login" && (
-        <LoginForm setState={handleCreateAccount} setToken={props.setToken} />
+        <LoginForm
+          setState={handleCreateAccount}
+          setToken={setToken}
+          handleEmailPage={handleEmail}
+        />
       )}
 
       {state === "register" && <RegisterForm setState={handleCreateAccount} />}

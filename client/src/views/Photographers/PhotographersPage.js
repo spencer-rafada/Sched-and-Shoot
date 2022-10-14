@@ -11,7 +11,7 @@ function PhotographersPage() {
 
   // sends GET request for the data to the backend
   async function getData() {
-    await axios("http://localhost:5000/photographers")
+    await axios("/photographers")
       .then((response) => {
         setPhotographersList(response.data);
         console.log(response.data);

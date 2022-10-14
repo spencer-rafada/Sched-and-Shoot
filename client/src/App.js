@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import {
@@ -7,14 +7,20 @@ import {
   AuthPage,
   PageNotFound,
   PhotographersPage,
-  Cloud,
   MyProfilePage,
+  DashboardPage,
 } from "./views";
 import NavBar from "./components/layout/NavBar/NavBar";
 import useToken from "./services/useToken";
 
 function App() {
   const { token, setToken } = useToken();
+  const [email, setEmail] = useState();
+
+  // This keeps track of who the user is in the current session
+  const handleEmailChange = (email) => {
+    setEmail(email);
+  };
 
   // if (!token) {
   //   return <AuthPage setToken={setToken} />;
@@ -36,10 +42,22 @@ function App() {
           <Route
             exact
             path="/auth/signin"
-            element={<AuthPage setToken={setToken} />}
+            element={
+              <AuthPage setToken={setToken} handleEmail={handleEmailChange} />
+            }
           ></Route>
-          <Route exact path="/module2" element={<Cloud />}></Route>
-          <Route exact path="/profile" element={<MyProfilePage />}></Route>
+          <Route
+            exact
+            path="/profile"
+            element={<MyProfilePage email={email} />}
+          ></Route>
+          <Route
+            exact
+            path="/dashboard"
+            element={
+              <DashboardPage token={token} setToken={setToken} email={email} />
+            }
+          ></Route>
           <Route path="*" element={<PageNotFound />}></Route>
         </Routes>
       </div>
