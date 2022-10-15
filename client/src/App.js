@@ -19,6 +19,7 @@ function App() {
 
   // This keeps track of who the user is in the current session
   const handleEmailChange = (email) => {
+    sessionStorage.setItem("email", email);
     setEmail(email);
   };
 
@@ -46,11 +47,7 @@ function App() {
               <AuthPage setToken={setToken} handleEmail={handleEmailChange} />
             }
           ></Route>
-          <Route
-            exact
-            path="/profile"
-            element={<MyProfilePage email={email} />}
-          ></Route>
+          <Route exact path="/profile" element={<MyProfilePage />}></Route>
           <Route
             exact
             path="/dashboard"

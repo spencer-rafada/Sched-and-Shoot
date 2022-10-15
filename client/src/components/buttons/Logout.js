@@ -3,6 +3,7 @@ import React from "react";
 function Logout({ setToken }) {
   const handleLogout = () => {
     sessionStorage.removeItem("token");
+    sessionStorage.removeItem("email");
     setToken();
   };
 

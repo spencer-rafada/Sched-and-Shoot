@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import FileBase64 from "react-file-base64";
 
 // send POST to register the user in DB
 async function registerUser(credentials) {
@@ -11,6 +12,9 @@ async function registerUser(credentials) {
       {
         email: credentials.email,
         password: credentials.password,
+        first: credentials.first,
+        last: credentials.last,
+        img: credentials.img,
       },
     ],
   });
@@ -21,6 +25,7 @@ export default function RegisterForm({ setState }) {
   const [password, setPassword] = useState("");
   const [fName, setFName] = useState("");
   const [lName, setLName] = useState("");
+  const [img, setImg] = useState("");
 
   const navigate = useNavigate();
 
@@ -40,6 +45,10 @@ export default function RegisterForm({ setState }) {
     setLName(e.target.value);
   };
 
+  const handleImgChange = ({ base64 }) => {
+    setImg(base64);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const new_user = {
@@ -47,6 +56,7 @@ export default function RegisterForm({ setState }) {
       password: password,
       first: fName,
       last: lName,
+      img: img,
     };
     registerUser(new_user);
     alert("User is registered");
@@ -114,6 +124,9 @@ export default function RegisterForm({ setState }) {
             />
           </label>
           <br></br>
+          <div>
+            <FileBase64 multiple={false} onDone={handleImgChange} />
+          </div>
           <button type="submit">Register</button>
         </form>
       </div>

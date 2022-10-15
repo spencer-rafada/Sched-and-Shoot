@@ -15,9 +15,15 @@ function NavBar(props) {
 
   return (
     <div className="NavBar">
-      <a className="logo" href="/">
-        Snap and Shoot
-      </a>
+      {props.token ? (
+        <a className="logo" href="/dashboard">
+          Snap and Shoot
+        </a>
+      ) : (
+        <a className="logo" href="/">
+          Snap and Shoot
+        </a>
+      )}
       {!props.token && (
         <a className="nav-sign-in" href="/auth/signin">
           Sign In

@@ -1,16 +1,16 @@
 import { React } from "react";
 // import axios from "axios";
 
-function ProfileCard({ setToggle, email }) {
-  // const [profile, setProfile] = useState();
-
-  // const getData = async () => {
-  //   await axios("");
-  // };
+function ProfileCard({ setToggle, data }) {
   return (
     <div className="profile-card">
-      {/* <img src={} alt="profile_img"></img> */}
-      <p>FirstName LastName</p>
+      {data.img && (
+        <img className="profile-img" src={data.img} alt="profile"></img>
+      )}
+      <p>
+        {data.first} {data.last}
+      </p>
+      <p>{data.email}</p>
       <button onClick={setToggle}>Edit Profile</button>
     </div>
   );

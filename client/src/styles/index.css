@@ -229,3 +229,8 @@ body, html {
     cursor: pointer;
     /* color: rebeccapurple; */
 }
+
+/* Profile Card */
+.profile-img {
+    max-width: 300px;
+}
